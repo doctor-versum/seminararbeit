@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Literaturverzeichnis - KI in der Politik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        posterDarkBlue: '#26346f',
+                        posterLightBlue: '#a6caec',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Schräger Hintergrundbalken exakt im Stil des Posters */
+        .poster-stripe {
+            position: absolute;
+            top: 0;
+            left: 35%;
+            width: 120px;
+            height: 100%;
+            /* Deckkraft auf exakt 1 gesetzt */
+            background-color: #a6caec;
+            transform: skewX(-14deg);
+            z-index: -1;
+            opacity: 1;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+        /* Weißer Balken im Dark Mode */
+        .dark .poster-stripe {
+            background-color: #ffffff;
+            opacity: 0.08;
+        }
+    </style>
+</head>
+<body class="bg-slate-200 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-300 font-sans relative overflow-x-hidden rounded-none">
+
+<div class="poster-stripe hidden md:block"></div>
+
+<div class="max-w-5xl mx-auto px-6 py-10 relative">
+    
+    <header class="border-b-[12px] border-posterDarkBlue dark:border-blue-600 pb-6 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 rounded-none">
+        <div>
+            <h1 class="text-3xl md:text-5xl font-black text-posterDarkBlue dark:text-blue-400 tracking-tight rounded-none">
+                KI in der Politik <span class="text-sm font-bold text-posterLightBlue dark:text-blue-300 tracking-wide uppercase rounded-none">Seminararbeit</span>
+            </h1>
+            <p class="text-sm md:text-base text-slate-700 dark:text-slate-400 mt-3 font-medium max-w-2xl rounded-none">
+                Welchen Einfluss hat <span class="font-bold text-posterDarkBlue dark:text-blue-400">KI</span> auf die Politik in <span class="font-bold">Deutschland</span> und den <span class="font-bold">USA</span> und wie wird sich dies vermutlich verändern?
+            </p>
+        </div>
+        
+        <button id="downloadMenuBtn" class="flex items-center gap-2 bg-white dark:bg-slate-900 border-2 border-posterDarkBlue dark:border-blue-500 rounded-none px-4 py-2 text-xs font-bold uppercase tracking-wider text-posterDarkBlue dark:text-blue-400 shadow-md hover:bg-posterDarkBlue hover:text-white dark:hover:bg-blue-500 dark:hover:text-slate-950 transition-all cursor-pointer z-10" aria-label="Materialien herunterladen">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="square" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            <span>Download</span>
+        </button>
+
+        <button id="themeToggle" class="flex items-center gap-2 bg-white dark:bg-slate-900 border-2 border-posterDarkBlue dark:border-blue-500 rounded-none px-4 py-2 text-xs font-bold uppercase tracking-wider text-posterDarkBlue dark:text-blue-400 shadow-md hover:bg-posterDarkBlue hover:text-white dark:hover:bg-blue-500 dark:hover:text-slate-950 transition-all cursor-pointer z-10" aria-label="Farbschema wechseln">
+            <svg id="sunIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path stroke-linecap="square" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m12.72-12.72l-1.41 1.41"></path>
+            </svg>
+            <svg id="moonIcon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="square" stroke-linejoin="miter" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+            <span id="themeText">Dark Mode</span>
+        </button>
+    </header>
+
+    <main class="space-y-12 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 p-8 shadow-lg rounded-none relative z-10">
+        
+        <section class="rounded-none">
+            <h2 class="text-xl font-extrabold text-posterDarkBlue dark:text-blue-400 border-b-2 border-posterDarkBlue dark:border-blue-500 pb-2 mb-6 tracking-wide uppercase rounded-none">
+                Bücher
+            </h2>
+            <div class="space-y-4 text-sm leading-relaxed pl-2 rounded-none">
+                <p class="bg-slate-50/90 dark:bg-transparent p-2 rounded-none">
+                    <span class="font-bold">Schick, N. (2021).</span> <span class="italic">Deepfakes. 1. Auflage, Deutsche Erstausgabe.</span> Verlagsort: Wilhelm-Goldmann-Verlag München.
+                </p>
+            </div>
+        </section>
+
+        <section class="rounded-none">
+            <h2 class="text-xl font-extrabold text-posterDarkBlue dark:text-blue-400 border-b-2 border-posterDarkBlue dark:border-blue-500 pb-2 mb-6 tracking-wide uppercase rounded-none">
+                Web-Dokumente
+            </h2>
+            <ul class="space-y-6 text-sm pl-2 rounded-none">
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Amodei, D. (05.03.2026).</span> <span class="italic">Where things stand with the Department of War</span>.</p>
+                    <a href="https://www.anthropic.com/news/where-stand-department-war" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.anthropic.com/news/where-stand-department-war] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+                
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Axel Springer Academy (2021).</span> <span class="italic">The Deepfake Report</span>.</p>
+                    <a href="https://www.thedeepfake.report/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.thedeepfake.report/] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Bayerisches Forschungsinstitut für Digitale Transformation (2024).</span> <span class="italic">Die Wirkung von Social Bots auf politische Diskussionen in sozialen Netzwerken</span>.</p>
+                    <a href="https://www.bidt.digital/phaenomene/die-wirkung-von-social-bots-auf-politische-diskussionen-in-sozialen-netzwerken/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bidt.digital/phaenomene/die-wirkung-von-social-bots-auf-politische-diskussionen-in-sozialen-netzwerken/] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">BDMS-Bund (11.02.2026).</span> <span class="italic">Kabinett beschließt schlanke KI-Aufsicht in Deutschland – Pressemitteilung 07/2026</span>.</p>
+                    <a href="https://bmds.bund.de/aktuelles/pressemitteilungen/detail/kabinett-beschließt-schlanke-ki-aufsicht-in-deutschland" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://bmds.bund.de/aktuelles/pressemitteilungen/detail/kabinett-beschließt-schlanke-ki-aufsicht-in-deutschland] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Bertelsmann-Stiftung (2025).</span> <span class="italic">Algorithmen im Wahlkampf: Studie der Universität Potsdam und der Bertelsmann Stiftung zeigt eine unausgewogene Sichtbarkeit von Parteien in Social-Media-Feeds junger Menschen</span>.</p>
+                    <a href="https://www.bertelsmann-stiftung.de/de/unsere-projekte/engagement-junger-menschen-fuer-demokratie/projektnachrichten/algorithmen-im-wahlkampf" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bertelsmann-stiftung.de/de/unsere-projekte/engagement-junger-menschen-fuer-demokratie/projektnachrichten/algorithmen-im-wahlkampf] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Bieber, C., Heesen, J., Grunwald, A., Rostalski, F. (Juli 2024).</span> <span class="italic">KI im Superwahljahr 2024</span>.</p>
+                    <a href="https://www.plattform-lernende-systeme.de/files/Downloads/Publikationen/Whitepaper_KI_im_Superwahljahr_Plattform_Lernende_Systeme_2024.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.plattform-lernende-systeme.de/files/Downloads/Publikationen/Whitepaper_KI_im_Superwahljahr_Plattform_Lernende_Systeme_2024.pdf] - 11.01.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Bundesregierung (15.11.2018).</span> <span class="italic">Strategie Künstliche Intelligenz der Bundesregierung</span>.</p>
+                    <a href="https://www.bundesregierung.de/resource/blob/997532/1550276/3f7d3c41c6e05695741273e78b8039f2/2018-11-15-ki-strategie-data.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bundesregierung.de/resource/blob/997532/1550276/3f7d3c41c6e05695741273e78b8039f2/2018-11-15-ki-strategie-data.pdf] - 17.01.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Bundesregierung (11.02.2026).</span> <span class="italic">Einheitliche Regeln für Künstliche Intelligenz in der EU</span>.</p>
+                    <a href="https://www.bundesregierung.de/breg-de/aktuelles/ai-act-2285944" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bundesregierung.de/breg-de/aktuelles/ai-act-2285944] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Cloudflare (o.J.).</span> <span class="italic">Was ist AI Data Poisoning (KI-Datenmanipulation)?</span></p>
+                    <a href="https://www.cloudflare.com/de-de/learning/ai/data-poisoning/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.cloudflare.com/de-de/learning/ai/data-poisoning/] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">CIO-Bund (vor Dezember 2023).</span> <span class="italic">Künstliche Intelligenz in der Verwaltung</span>.</p>
+                    <a href="https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/datenpolitik/daten-und-ki/daten-und-ki-node.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/datenpolitik/daten-und-ki/daten-und-ki-node.html] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="https://web.archive.org/web/20260101122118/https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/datenpolitik/daten-und-ki/daten-und-ki-node.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-500 dark:text-blue-300 hover:underline mt-1.5 rounded-none">
+                        <span>ARCHIVIERT [https://web.archive.org/web/20260101122118/https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/datenpolitik/daten-und-ki/daten-und-ki-node.html]</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Deutschlandfunk (01.08.2024).</span> <span class="italic">Fesseln für die künstliche Intelligenz</span>.</p>
+                    <a href="https://www.deutschlandfunk.de/ai-act-eu-kuenstliche-intelligenz-gefahr-regulierung-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.deutschlandfunk.de/ai-act-eu-kuenstliche-intelligenz-gefahr-regulierung-100.html] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Deutschlandfunk (07.05.2025).</span> <span class="italic">Trump verbreitet Bild von sich als Papst – Bischof fordert Entschuldigung für „tiefe Beleidigung der Katholiken“</span>.</p>
+                    <a href="https://www.deutschlandfunk.de/trump-verbreitet-bild-von-sich-als-papst-bi-schof-fordert-entschuldigung-fuer-tiefe-beleidigung-der-k-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.deutschlandfunk.de/trump-verbreitet-bild-von-sich-als-papst-bi-schof-fordert-entschuldigung-fuer-tiefe-beleidigung-der-k-100.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Denzel, T. (23.06.2023).</span> <span class="italic">Wie Deepfakes und Bots die Demokratie gefährden</span>.</p>
+                    <a href="https://www.tagesschau.de/inland/innenpolitik/bots-fakes-wahlkampf-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.tagesschau.de/inland/innenpolitik/bots-fakes-wahlkampf-100.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">EBU (22.10.2025).</span> <span class="italic">Largest study of its kind shows AI assistants misrepresent news content 45% of the time – regardless of language or territory</span>.</p>
+                    <a href="https://www.ebu.ch/news/2025/10/ai-s-systemic-distortion-of-news-is-consistent-across-languages-and-territories-international-study-by-public-service-media" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.ebu.ch/news/2025/10/ai-s-systemic-distortion-of-news-is-consistent-across-languages-and-territories-international-study-by-public-service-media] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">EU Artificial Intelligence Act (27.02.2024).</span> <span class="italic">Zusammenfassung des AI-Gesetzes auf hoher Ebene</span>.</p>
+                    <a href="https://artificialintelligenceact.eu/de/high-level-summary/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://artificialintelligenceact.eu/de/high-level-summary/] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Fokuhl, J. &amp; Kowsky, V. (08.03.2026).</span> <span class="italic">Die digitale Macht im Wahlkampf</span>.</p>
+                    <a href="https://www.handelsblatt.com/politik/deutschland/baden-wuerttemberg-die-digitale-macht-im-wahlkampf/100202532.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.handelsblatt.com/politik/deutschland/baden-wuerttemberg-die-digitale-macht-im-wahlkampf/100202532.html] - 03.03.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Friedrich Naumann Stiftung (04.12.2024).</span> <span class="italic">Studie liefert erstmals konkrete Zahlen zum Einsatz von KI in Wahlkämpfen</span>.</p>
+                    <a href="https://www.freiheit.org/de/pressemitteilung/studie-liefert-erstmals-konkrete-zahlen-zum-einsatz-von-ki-wahlkaempfen" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.freiheit.org/de/pressemitteilung/studie-liefert-erstmals-konkrete-zahlen-zum-einsatz-von-ki-wahlkaempfen] - 04.04.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Grünwald, I. (24.01.2025).</span> <span class="italic">KI-Update Deep-Dive: KI-gestützte Wahlhilfe für die Bundestagswahl</span>.</p>
+                    <a href="https://www.heise.de/news/KI-Update-Deep-Dive-KI-gestuetzte-Wahlhilfe-fuer-die-Bundestagswahl-10255172.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.heise.de/news/KI-Update-Deep-Dive-KI-gestuetzte-Wahlhilfe-fuer-die-Bundestagswahl-10255172.html] - 18.04.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Hegemann, L. (04.12.2025).</span> <span class="italic">Kann KI beeinflussen, wen wir wählen?</span></p>
+                    <a href="https://www.zeit.de/digital/internet/2025-12/wahlmanipulation-ki-chatbot-meinung-ueberzeugung-us-wahl" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.zeit.de/digital/internet/2025-12/wahlmanipulation-ki-chatbot-meinung-ueberzeugung-us-wahl] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Henrich, J., Lieber, J. &amp; Rzepka, D. (09.12.2025).</span> <span class="italic">Google und die KI: Darum geht's</span>.</p>
+                    <a href="https://www.zdfheute.de/politik/eu-google-ermittlungen-ki-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.zdfheute.de/politik/eu-google-ermittlungen-ki-100.html] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Jamali, L. &amp; Hays, K. (06.03.2026).</span> <span class="italic">Anthropic vows to sue Pentagon over supply chain risk label</span>.</p>
+                    <a href="https://www.bbc.com/news/articles/cn5g3z3xe65o" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bbc.com/news/articles/cn5g3z3xe65o] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Killian, N. (19.01.2026).</span> <span class="italic">Er wäre gern einer der Guten</span>.</p>
+                    <a href="https://www.zeit.de/2026/03/dario-amodei-anthropic-openai-kuenstliche-intelligenz-claude" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.zeit.de/2026/03/dario-amodei-anthropic-openai-kuenstliche-intelligenz-claude] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Kreutz, A. &amp; Qu, J. (06.11.2025).</span> <span class="italic">Generative KI als Lückenfüller</span>.</p>
+                    <a href="https://safe-intelligence.fraunhofer.de/artikel/safety-engineering-generative-ki-als-lueckenfueller" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://safe-intelligence.fraunhofer.de/artikel/safety-engineering-generative-ki-als-lueckenfueller] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Linder, R. (01.11.2024).</span> <span class="italic">Ein überzeugendes Deepfake kann ausreichen, um einen desaströsen Effekt zu haben</span>.</p>
+                    <a href="https://www.faz.net/aktuell/wirtschaft/kuenstliche-intelligenz/us-wahl-2024-der-deepfake-wahlkampf-110084082.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.faz.net/aktuell/wirtschaft/kuenstliche-intelligenz/us-wahl-2024-der-deepfake-wahlkampf-110084082.html] - 02.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Lindern, J. (09.08.2022).</span> <span class="italic">Wie wirkt sich die Nutzung digitaler Plattformen auf Meinungsbildungsprozesse aus?</span></p>
+                    <a href="https://www.bpb.de/lernen/digitale-bildung/politische-bildung-in-einer-digitalen-welt/unterrichtsmaterialien/506332/hintergrund-wie-wirkt-sich-die-nutzung-digitaler-plattformen-auf-meinungsbildungsprozesse-aus/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bpb.de/lernen/digitale-bildung/politische-bildung-in-einer-digitalen-welt/unterrichtsmaterialien/506332/hintergrund-wie-wirkt-sich-die-nutzung-digitaler-plattformen-auf-meinungsbildungsprozesse-aus/] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">MDR (02.06.2024).</span> <span class="italic">Auf dem Weg zur künstlichen Demokratie?</span></p>
+                    <a href="https://www.mdr.de/nachrichten/deutschland/gesellschaft/kuenstliche-intelligenz-ki-nutzen-gefahren-politik-wahlen-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.mdr.de/nachrichten/deutschland/gesellschaft/kuenstliche-intelligenz-ki-nutzen-gefahren-politik-wahlen-100.html] - 30.04.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="https://web.archive.org/web/20250421231929/https://www.mdr.de/nachrichten/deutschland/gesellschaft/kuenstliche-intelligenz-ki-nutzen-gefahren-politik-wahlen-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-500 dark:text-blue-300 hover:underline mt-1.5 rounded-none">
+                        <span>ARCHIVIERT [https://web.archive.org/web/20250421231929/https://www.mdr.de/nachrichten/deutschland/gesellschaft/kuenstliche-intelligenz-ki-nutzen-gefahren-politik-wahlen-100.html]</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Muñoz K. (10.10.2024).</span> <span class="italic">KI und Wahlen: Brennpunkt USA</span>.</p>
+                    <a href="https://www.bpb.de/themen/nordamerika/usa/552975/ki-und-wahlen-brennpunkt-usa/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bpb.de/themen/nordamerika/usa/552975/ki-und-wahlen-brennpunkt-usa/] - 15.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Muñoz, K., Laumann, E. (20.02.2025).</span> <span class="italic">Angriff auf die Demokratie</span>.</p>
+                    <a href="https://www.ipg-journal.de/rubriken/demokratie-und-gesellschaft/artikel/angriff-auf-die-demokratie-8083/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.ipg-journal.de/rubriken/demokratie-und-gesellschaft/artikel/angriff-auf-die-demokratie-8083/] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Onlinesicherheit.at (04.10.2021).</span> <span class="italic">Cheap Fake: audiovisuelle Fälschungen mithilfe einfacher Mittel</span>.</p>
+                    <a href="https://www.onlinesicherheit.gv.at/Services/News/Cheap-Fake--audiovisuelle-Faelschungen-mithilfe-einfacher-Mittel.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.onlinesicherheit.gv.at/Services/News/Cheap-Fake--audiovisuelle-Faelschungen-mithilfe-einfacher-Mittel.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Proschofsky, A. (30.04.2026).</span> <span class="italic">"Sprich niemals über Kobolde": OpenAI muss seiner KI seltsames Verhalten verbieten</span>.</p>
+                    <a href="https://www.derstandard.at/story/3000000318940/sprich-niemals-ueber-kobolde-openai-muss-seiner-ki-seltsames-verhalten-verbieten" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.derstandard.at/story/3000000318940/sprich-niemals-ueber-kobolde-openai-muss-seiner-ki-seltsames-verhalten-verbieten] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Puls24 (07.11.2025).</span> <span class="italic">EU erwägt Aussetzung von Teilen des KI-Gesetzes</span>.</p>
+                    <a href="https://www.puls24.at/news/politik/eu-erwaegt-aussetzung-von-teilen-des-ki-gesetzes/448398" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.puls24.at/news/politik/eu-erwaegt-aussetzung-von-teilen-des-ki-gesetzes/448398] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="https://web.archive.org/web/20251215180418/https://www.puls24.at/news/politik/eu-erwaegt-aussetzung-von-teilen-des-ki-gesetzes/448398" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-500 dark:text-blue-300 hover:underline mt-1.5 rounded-none">
+                        <span>ARCHIVIERT [https://web.archive.org/web/20251215180418/https://www.puls24.at/news/politik/eu-erwaegt-aussetzung-von-teilen-des-ki-gesetzes/448398]</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Reveland, C. (05.02.2025).</span> <span class="italic">Rechts, weiblich, Fake</span>.</p>
+                    <a href="https://www.tagesschau.de/faktenfinder/kontext/rechte-ki-influencer-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.tagesschau.de/faktenfinder/kontext/rechte-ki-influencer-100.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Sauer, H. (28.01.2026).</span> <span class="italic">Unglaublich: Wie uns KI nach so kurzer Zeit schon manipuliert</span>.</p>
+                    <a href="https://www.chip.de/news/kuenstliche-intelligenz/unglaublich-wie-uns-ki-nach-so-kurzer-zeit-schon-manipuliert_9ae5e5a5-b65c-4316-8fa4-b5ecd82cf013.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.chip.de/news/kuenstliche-intelligenz/unglaublich-wie-uns-ki-nach-so-kurzer-zeit-schon-manipuliert_9ae5e5a5-b65c-4316-8fa4-b5ecd82cf013.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Schieb, J. (27.10.2025).</span> <span class="italic">KI erfindet jede dritte Antwort</span>.</p>
+                    <a href="https://www.tagesschau.de/wissen/technologie/kuenstliche-intelligenz-fakten-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.tagesschau.de/wissen/technologie/kuenstliche-intelligenz-fakten-100.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Schmedding, N. (09.01.2026).</span> <span class="italic">Auch jetzt noch: Die KI lügt massiv</span>.</p>
+                    <a href="https://www.michaelsbund.de/einzelheiten/gesellschaft/zukunft/auch-jetzt-noch-die-ki-luegt-massiv/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.michaelsbund.de/einzelheiten/gesellschaft/zukunft/auch-jetzt-noch-die-ki-luegt-massiv/] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Spiegel (08.09.2021).</span> <span class="italic">Parteien schalteten Werbung für vier Millionen Euro</span>.</p>
+                    <a href="https://www.spiegel.de/netzwelt/bundestagswahl-2021-parteien-schalteten-auf-facebook-und-co-werbung-fuer-4-millionen-euro-a-de29e3b2-71a1-4b75-9094-527b1fcc306a" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.spiegel.de/netzwelt/bundestagswahl-2021-parteien-schalteten-auf-facebook-und-co-werbung-fuer-4-millionen-euro-a-de29e3b2-71a1-4b75-9094-527b1fcc306a] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Sturm, E. (14.07.2025).</span> <span class="italic">GPT-5 jetzt auch im Microsoft 365 Copilot-Chat verfügbar</span>.</p>
+                    <a href="https://internet-fuer-architekten.de/gpt-5-microsoft-365-copilot-chat-verfuegbar/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://internet-fuer-architekten.de/gpt-5-microsoft-365-copilot-chat-verfuegbar/] - 05.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">SWR Data Lab, TU Dortmund (06.03.2026).</span> <span class="italic">Infos zur Wahl: Warum Chatbots nicht neutral informieren</span>.</p>
+                    <a href="https://www.swr.de/swraktuell/landtagswahl-2026-wie-ki-chatbots-deine-wahlentscheidung-beeinflussen-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.swr.de/swraktuell/landtagswahl-2026-wie-ki-chatbots-deine-wahlentscheidung-beeinflussen-100.html] - 04.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Tagesschau (14.04.2026 9:29).</span> <span class="italic">Kritik an Papst und KI-Bild: Trump auf Konfrontationskurs mit dem Vatikan</span>.</p>
+                    <a href="https://www.tagesschau.de/ausland/europa/papst-trump-106.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.tagesschau.de/ausland/europa/papst-trump-106.html] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">ZDF Heute (01.05.2026).</span> <span class="italic">ZDF Heute Sendung vom 01. Mai 2026</span>.</p>
+                    <a href="https://www.zdf.de/nachrichten/heute-19-uhr/heute-19-uhr-vom-01-mai-2026-100.html" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.zdf.de/nachrichten/heute-19-uhr/heute-19-uhr-vom-01-mai-2026-100.html] - 01.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="rounded-none">
+            <h2 class="text-xl font-extrabold text-posterDarkBlue dark:text-blue-400 border-b-2 border-posterDarkBlue dark:border-blue-500 pb-2 mb-6 tracking-wide uppercase rounded-none">
+                Vorträge
+            </h2>
+            <div class="space-y-4 text-sm leading-relaxed pl-2 rounded-none">
+                <p class="bg-slate-50/90 dark:bg-transparent p-2 rounded-none">
+                    <span class="font-bold">Haufe Group. (27.11.2025).</span> <span class="italic">Wie funktioniert Generative KI?</span> [Vortrag, Young Talents Night 2025, Freiburg im Breisgau, Deutschland.]
+                </p>
+            </div>
+        </section>
+
+        <section class="rounded-none">
+            <h2 class="text-xl font-extrabold text-posterDarkBlue dark:text-blue-400 border-b-2 border-posterDarkBlue dark:border-blue-500 pb-2 mb-6 tracking-wide uppercase rounded-none">
+                Filme
+            </h2>
+            <div class="space-y-4 text-sm leading-relaxed pl-2 rounded-none">
+                <p class="bg-slate-50/90 dark:bg-transparent p-2 rounded-none">
+                    <span class="font-bold">Kollmar T., Mathewson F., Ruck J., Schulze-Velmede L. (2021).</span> <span class="italic">The Deepfake Report</span> [Film] Axel Springer Academy.
+                </p>
+            </div>
+        </section>
+
+        <section class="rounded-none">
+            <h2 class="text-xl font-extrabold text-posterDarkBlue dark:text-blue-400 border-b-2 border-posterDarkBlue dark:border-blue-500 pb-2 mb-6 tracking-wide uppercase rounded-none">
+                Bilder
+            </h2>
+            <ul class="space-y-6 text-sm pl-2 rounded-none">
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">Muñoz K. (10.10.2024).</span> <span class="italic">KI und Wahlen: Brennpunkt USA</span>.</p>
+                    <a href="https://www.bpb.de/themen/nordamerika/usa/552975/ki-und-wahlen-brennpunkt-usa//" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://www.bpb.de/themen/nordamerika/usa/552975/ki-und-wahlen-brennpunkt-usa/] - 15.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+
+                <li class="bg-slate-50/90 dark:bg-transparent p-2 border-b border-slate-100 dark:border-slate-800/50 pb-4 last:border-0 rounded-none">
+                    <p><span class="font-bold">EU Artificial Intelligence Act (27.02.2024).</span> <span class="italic">Zusammenfassung des AI-Gesetzes auf hoher Ebene</span>.</p>
+                    <a href="https://artificialintelligenceact.eu/de/high-level-summary/" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1.5 rounded-none">
+                        <span>QUELLE ÖFFNEN [https://artificialintelligenceact.eu/de/high-level-summary/] - 03.05.2026</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="mt-24 pt-6 border-t-4 border-slate-300 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider rounded-none relative z-10">
+            <p class="rounded-none">Tobias P. Hönisch &bull; TG12 &bull; 2026</p>
+            <p class="text-posterDarkBlue dark:text-blue-400 text-sm tracking-widest font-black rounded-none">GHSE Emmendingen</p>
+        </div>
+        <p class="text-center py-6 text-xs text-slate-500">
+            © 2026 Tobias Hönisch. Alle Rechte vorbehalten. <br>
+            Inhalt und Design wurden im Rahmen einer Seminararbeit erstellt. <br>
+            Eine Vervielfältigung oder Nutzung ist ohne Zustimmung nicht gestattet. <br><br>
+            Diese Website wurde mit hilfe von Gemini 3 Flash und Tailwind CSS erstellt. <br>
+        </p>
+    </footer>
+
+    <div id="downloadModal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white dark:bg-slate-900 border-4 border-posterDarkBlue dark:border-blue-600 p-6 max-w-md w-full shadow-2xl rounded-none relative">
+            
+            <button id="closeModalBtn" class="absolute top-3 right-3 text-slate-400 hover:text-posterDarkBlue dark:hover:text-blue-400 font-black text-lg cursor-pointer">&times;</button>
+            
+            <h3 class="text-lg font-black text-posterDarkBlue dark:text-blue-400 uppercase tracking-wider border-b-2 border-slate-200 dark:border-slate-800 pb-2 mb-4">Materialien wählen</h3>
+            
+            <div class="space-y-3 mb-6">
+                <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <input type="checkbox" id="chkPlakat" checked class="w-4 h-4 text-posterDarkBlue border-2 border-posterDarkBlue rounded-none focus:ring-0">
+                    <span class="text-sm font-bold text-slate-800 dark:text-slate-200">Wissenschaftliches Plakat / Poster (PDF)</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer p-2 hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <input type="checkbox" id="chkArbeit" checked class="w-4 h-4 text-posterDarkBlue border-2 border-posterDarkBlue rounded-none focus:ring-0">
+                    <span class="text-sm font-bold text-slate-800 dark:text-slate-200">Schriftliche Dokumentation / Arbeit (PDF)</span>
+                </label>
+            </div>
+
+            <div class="relative group">
+                <button id="startDownloadBtn" disabled class="w-full text-center bg-slate-300 dark:bg-slate-800 border-2 border-slate-400 dark:border-slate-700 text-slate-500 dark:text-slate-400 rounded-none px-4 py-3 text-xs font-black uppercase tracking-widest cursor-not-allowed transition-all">
+                    Download starten
+                </button>
+                
+                <div class="absolute bottom-full left-0 right-0 mb-2 hidden group-hover:block bg-posterDarkBlue text-white text-center p-2 text-xs font-bold uppercase tracking-wider border border-posterLightBlue shadow-md">
+                    Der Download der Materialien ist erst nach Abschluss der Bewertung möglich.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const themeText = document.getElementById('themeText');
+    
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    if (currentTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        updateToggleUI('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+        updateToggleUI('light');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            updateToggleUI('light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            updateToggleUI('dark');
+        }
+    });
+
+    function updateToggleUI(theme) {
+        if (theme === 'dark') {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            themeText.textContent = 'Light Mode';
+        } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            themeText.textContent = 'Dark Mode';
+        }
+    }
+
+    // --- DOWNLOAD MODAL LOGIK ---
+    const downloadMenuBtn = document.getElementById('downloadMenuBtn');
+    const downloadModal = document.getElementById('downloadModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const startDownloadBtn = document.getElementById('startDownloadBtn');
+    const chkPlakat = document.getElementById('chkPlakat');
+    const chkArbeit = document.getElementById('chkArbeit');
+
+    // Modal öffnen/schließen
+    downloadMenuBtn.addEventListener('click', () => downloadModal.classList.remove('hidden'));
+    closeModalBtn.addEventListener('click', () => downloadModal.classList.add('hidden'));
+    
+    // Schließen wenn man außerhalb klickt
+    window.addEventListener('click', (e) => {
+        if (e.target === downloadModal) downloadModal.classList.add('hidden');
+    });
+
+    // --- ANLEITUNG: SO AKTIVIERST DU DEN DOWNLOAD SPÄTER ---
+    // Wenn du fertig bewertet wurdest, ändere 'true' einfach in 'false':
+    const bewertungAktiv = true; 
+
+    if (!bewertungAktiv) {
+        // Schaltet den Button scharf
+        startDownloadBtn.removeAttribute('disabled');
+        startDownloadBtn.className = "w-full text-center bg-white dark:bg-slate-900 border-2 border-posterDarkBlue dark:border-blue-500 rounded-none px-4 py-3 text-xs font-black uppercase tracking-widest text-posterDarkBlue dark:text-blue-400 shadow-md hover:bg-posterDarkBlue hover:text-white dark:hover:bg-blue-500 dark:hover:text-slate-950 transition-all cursor-pointer";
+        
+        // Entfernt den Sperr-Tooltip
+        const tooltip = startDownloadBtn.nextElementSibling;
+        if(tooltip) tooltip.remove();
+
+        // Download-Aktion
+        startDownloadBtn.addEventListener('click', () => {
+            if (chkPlakat.checked) {
+                // window.open('/plakat.pdf', '_blank');
+            }
+            if (chkArbeit.checked) {
+                // window.open('/arbeit.pdf', '_blank');
+            }
+            downloadModal.classList.add('hidden');
+        });
+    }
+</script>
+
+</body>
+</html>

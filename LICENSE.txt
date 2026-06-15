@@ -1,0 +1,10 @@
+Copyright (c) 2026 Tobias Hönisch
+
+Alle Rechte vorbehalten. / All rights reserved.
+
+Der Inhalt dieses Repositories (einschließlich aller Texte, des Quellcodes und des Designs) wurde im Rahmen einer Seminararbeit erstellt. 
+
+Ohne vorherige schriftliche Genehmigung des Urhebers darf kein Teil dieses Werkes in irgendeiner Form (durch Fotokopie, Mikrofilm oder ein anderes Verfahren) reproduziert oder unter Verwendung elektronischer Systeme verarbeitet, vervielfältigt oder verbreitet werden.
+
+Exception for Evaluation:
+Prüferinnen und Prüfer der Seminararbeit sind berechtigt, diesen Code und die Inhalte zum Zweck der Leistungsbewertung herunterzuladen und zu prüfen.
